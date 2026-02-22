@@ -3,52 +3,73 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-    private int _speed = 300;
-    private double miles = 100;
+	private int _speed = 300;
 
-    public override void _Ready()
+	public void GetInput()
 	{
+		Vector2 inputDir = Input.GetVector("MoveLeft", "MoveRight", "null", "null");
+		Velocity = inputDir * _speed;
 	}
 
-    public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
+		GetInput();
+		MoveAndCollide(Velocity * (float)delta);
 	}
 
-    public void GetInput()
-    {
-        // Vector2 inputDir = Input.GetVector("MoveLeft", "MoveRight", "null", "null");
-        // Input.ge
-        Vector2 direction = Vector2.Zero;
-        if(Input.IsActionJustPressed("MoveLeft"))
-        {
-            direction = Vector2.Left;
-        }
+	private int _speed = 300;
+	private double health = 100;
 
-        if(Input.IsActionJustPressed("MoveRight"))
-        {
-            direction = Vector2.Right;
-        }
-        
-        Velocity = direction * _speed;
-    }
 
-    
+	private RichTextLabel healthText;
 
-    public override void _PhysicsProcess(double delta)
-    {
-        GetInput();
-        // MoveAndCollide(Velocity * (float)delta);
-    }
+	public override void _Ready()
+	{
+		healthText = GetNode<RichTextLabel>("HealthText");
+		UpdateHealthText();
+	}
 
-    public double GetMiles()
-    {
-        return miles;
-    }
+	public void GetInput()
+	{
+		// Vector2 inputDir = Input.GetVector("MoveLeft", "MoveRight", "null", "null");
+		// Input.ge
+		Vector2 direction = Vector2.Zero;
+		if(Input.IsActionJustPressed("MoveLeft"))
+		{
+			direction = Vector2.Left;
+		}
 
-    public double AddMiles(double miles)
-    {
-        this.miles += miles;
-        return this.miles;
-    }
+		if(Input.IsActionJustPressed("MoveRight"))
+		{
+			direction = Vector2.Right;
+		}
+		
+		Velocity = direction * _speed;
+	}
 
+	
+
+	public override void _PhysicsProcess(double delta)
+	{
+		GetInput();
+		// MoveAndCollide(Velocity * (float)delta);
+	}
+
+	public double GetHealth()
+	{
+		return health;
+	}
+
+	public double TakeDamage(double damage)
+	{
+		health -= damage;
+		UpdateHealthText();
+		return health;
+	}
+
+
+	private void UpdateHealthText()
+	{
+		healthText.Text = "Health: " + GetHealth();
+	}
 }
