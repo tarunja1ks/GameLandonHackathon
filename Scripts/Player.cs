@@ -4,15 +4,14 @@ using System;
 public partial class Player : CharacterBody2D
 {
     private int _speed = 300;
-    private double health = 100;
-
-
-    private RichTextLabel healthText;
+    private double miles = 100;
 
     public override void _Ready()
 	{
-        healthText = GetNode<RichTextLabel>("HealthText");
-        UpdateHealthText();
+	}
+
+    public override void _Process(double delta)
+	{
 	}
 
     public void GetInput()
@@ -41,20 +40,15 @@ public partial class Player : CharacterBody2D
         // MoveAndCollide(Velocity * (float)delta);
     }
 
-    public double GetHealth()
+    public double GetMiles()
     {
-        return health;
+        return miles;
     }
 
-    public double TakeDamage(double damage)
+    public double AddMiles(double miles)
     {
-        health -= damage;
-        UpdateHealthText();
-        return health;
+        this.miles += miles;
+        return this.miles;
     }
 
-    private void UpdateHealthText()
-    {
-        healthText.Text = "Health: " + GetHealth();
-    }
 }
