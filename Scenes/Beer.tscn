@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b8t8huijge2b5"]
 
 [ext_resource type="Texture2D" uid="uid://dtipry2lxqn7i" path="res://Assets/Sprites/beer Background Removed.png" id="1_dxtug"]
+[ext_resource type="Script" uid="uid://biv8galsl5gjd" path="res://Scripts/Beer.cs" id="1_qp0x3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4jh7"]
 size = Vector2(51, 198)
 
 [node name="Beer" type="Area2D" unique_id=1685941350]
+script = ExtResource("1_qp0x3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1739329466]
 texture = ExtResource("1_dxtug")
