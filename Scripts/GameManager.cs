@@ -7,6 +7,8 @@ public partial class GameManager : Node2D
 
 	private PlayAgain playAgain;
 	private RichTextLabel milesText;
+
+	private RichTextLabel maxMilesTest;
 	private static System.Timers.Timer aTimer;
 
 
@@ -15,21 +17,22 @@ public partial class GameManager : Node2D
 	{
 		player = GetNodeOrNull<Player>("Player");
 		milesText = GetNodeOrNull<RichTextLabel>("ScoreText");
+		maxMilesTest=GetNodeOrNull<RichTextLabel>("HighScore");
 		Console.WriteLine(player);
 		Console.WriteLine(milesText);
 
 		UpdateMilesText();
 
 		aTimer = new System.Timers.Timer(2000);
-        aTimer.Elapsed += OnTimedEvent;
-        aTimer.AutoReset = true;
-        aTimer.Enabled = true;
+		aTimer.Elapsed += OnTimedEvent;
+		aTimer.AutoReset = true;
+		aTimer.Enabled = true;
 	}
 
 	public void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
-    {
-        player.AddMiles(0.5);
-    }
+	{
+		player.AddMiles(0.5);
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -39,6 +42,7 @@ public partial class GameManager : Node2D
 		}
 		else{
 			UpdateMilesText();
+			UpdateMaxMilesText();
 		}
 
 		// if(player.isDead() && playAgain.getPlayAgain()){
@@ -49,8 +53,13 @@ public partial class GameManager : Node2D
 	}
 
 	private void UpdateMilesText()
-    {
-        milesText.Text = "Miles: " + player.GetMiles();
-    }
+	{
+		milesText.Text = "Miles: " + player.GetMiles();
+	}
+
+	private void UpdateMaxMilesText(){
+		// maxMilesTest.Text="High Score: " + player.getMaxMiles();
+		maxMilesTest.Text="";
+	}
 
 }

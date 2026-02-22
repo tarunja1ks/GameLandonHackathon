@@ -7,6 +7,8 @@ public partial class Player : CharacterBody2D
     private double health = 100;
     private double miles = 0;
 
+    private double maxmiles=0;
+
     private bool Dead=false;
 
     public override void _Ready()
@@ -73,8 +75,13 @@ public partial class Player : CharacterBody2D
         return miles;
     }
 
+    public double getMaxMiles(){
+        return this.maxmiles;
+    }
+
     public void AddMiles(double miles)
     {
         this.miles += miles;
+        this.maxmiles=Math.Max(maxmiles,miles);
     }
 }
