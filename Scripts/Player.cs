@@ -1,27 +1,32 @@
 using Godot;
 using System;
 
-public partial class Player : CharacterBody2D
+public partial class Player : Node2D
 {
     private int _speed = 300;
     private double health = 100;
 
+    CharacterBody2D character;
+
+    public override void _Ready()
+    {
+       this.character = GetNode<CharacterBody2D>("CharacterBody2D");
+    }
+
+
     public void GetInput()
     {
-        // Vector2 inputDir = Input.GetVector("MoveLeft", "MoveRight", "null", "null");
-        // Input.ge
-        Vector2 direction = Vector2.Zero;
-        if(Input.IsActionJustPressed("MoveLeft"))
+        Vector2 steering = Vector2.Zero;
+        if(Input.IsActionPressed("MoveLeft",false))
         {
-            direction = Vector2.Left;
+            steering = Vector2.Left;
         }
-
-        if(Input.IsActionJustPressed("MoveRight"))
+        if(Input.IsActionPressed("MoveRight",false))
         {
-            direction = Vector2.Right;
+            steering = Vector2.Right;
         }
         
-        Velocity = direction * _speed;
+        character.Velocity = steering * _speed;
     }
 
     
@@ -29,7 +34,7 @@ public partial class Player : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         GetInput();
-        // MoveAndCollide(Velocity * (float)delta);
+        character.MoveAndCollide(character.Velocity * (float)delta);
     }
 
     public double GetHealth()
