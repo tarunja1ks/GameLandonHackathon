@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://d24x06yqkxdnj" path="res://Scenes/Player.tscn" id="1_nhkr4"]
 [ext_resource type="Texture2D" uid="uid://dtipry2lxqn7i" path="res://Assets/Sprites/beer Background Removed.png" id="2_7rqgy"]
-[ext_resource type="Script" uid="uid://b2cgv43b08vtr" path="res://Scenes/UpdateHealthText.cs" id="3_qxria"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4jh7"]
 size = Vector2(51, 198)
@@ -28,7 +27,6 @@ offset_right = -133.0
 offset_bottom = -112.0
 theme_override_font_sizes/normal_font_size = 14
 text = "Health: 100"
-script = ExtResource("3_qxria")
 
 [node name="ScoreText" type="RichTextLabel" parent="." unique_id=1359775849]
 offset_left = -224.0
