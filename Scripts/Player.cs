@@ -3,7 +3,6 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-<<<<<<< HEAD
 	private int _speed = 300;
 
 	public void GetInput()
@@ -17,8 +16,7 @@ public partial class Player : CharacterBody2D
 		GetInput();
 		MoveAndCollide(Velocity * (float)delta);
 	}
-}
-=======
+
     private int _speed = 300;
     private double health = 100;
 
@@ -68,14 +66,11 @@ public partial class Player : CharacterBody2D
         UpdateHealthText();
         return health;
     }
-<<<<<<< HEAD
-}
->>>>>>> refs/remotes/origin/main
-=======
+
 
     private void UpdateHealthText()
     {
         healthText.Text = "Health: " + GetHealth();
     }
 }
->>>>>>> refs/remotes/origin/main
+
