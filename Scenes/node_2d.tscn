@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d24x06yqkxdnj"]
+
+[ext_resource type="Texture2D" uid="uid://dtipry2lxqn7i" path="res://Assets/Sprites/beer Background Removed.png" id="1_j2wod"]
+[ext_resource type="Script" uid="uid://bicll0o5r34r7" path="res://Beerbottle.cs" id="1_v1qfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh5uf"]
+size = Vector2(51, 198)
+
+[node name="Node2D" type="Node2D" unique_id=946290162]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1630556330]
+position = Vector2(542, 287)
+script = ExtResource("1_v1qfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=626332449]
+texture = ExtResource("1_j2wod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1735740952]
+position = Vector2(-2.5, 2)
+shape = SubResource("RectangleShape2D_hh5uf")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
