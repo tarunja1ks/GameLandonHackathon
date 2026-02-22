@@ -1,17 +1,14 @@
 using Godot;
 using System;
 
-public partial class Player : Node2D
+public partial class Player : CharacterBody2D
 {
     private int _speed = 300;
     private double health = 100;
     private double miles = 0;
 
-    CharacterBody2D character;
-
     public override void _Ready()
     {
-       this.character = GetNode<CharacterBody2D>("CharacterBody2D");
        this.miles = 0;
     }
 
@@ -28,7 +25,7 @@ public partial class Player : Node2D
             steering = Vector2.Right;
         }
         
-        character.Velocity = steering * _speed;
+        Velocity = steering * _speed;
     }
 
 	
@@ -36,7 +33,7 @@ public partial class Player : Node2D
     public override void _PhysicsProcess(double delta)
     {
         GetInput();
-        character.MoveAndCollide(character.Velocity * (float)delta);
+        MoveAndCollide(Velocity * (float)delta);
     }
 
 	public double GetHealth()

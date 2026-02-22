@@ -14,6 +14,7 @@ public partial class Beer : Area2D
 	}
 	
 	public void _on_body_entered(Node2D body){
+		GD.Print("Beer collided with " + body.Name);
 		if(body is Player){
 			Player playerBody = (Player)body;
 			playerBody.AddMiles(-100);

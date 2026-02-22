@@ -6,19 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_augei"]
 size = Vector2(97, 94)
 
-[node name="Player" type="Node2D" unique_id=946290162]
-z_index = 1
+[node name="Player" type="CharacterBody2D" unique_id=1475355222]
 script = ExtResource("1_kyqiw")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1475355222]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1931862533]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1931862533]
 scale = Vector2(1.19, 2.575)
 shape = SubResource("RectangleShape2D_augei")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=283035797]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=283035797]
 rotation = -1.5707964
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_kyqiw")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1329931320]
