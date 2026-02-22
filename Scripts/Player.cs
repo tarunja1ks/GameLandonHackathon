@@ -29,7 +29,7 @@ public partial class Player : Node2D
         character.Velocity = steering * _speed;
     }
 
-    
+	
 
     public override void _PhysicsProcess(double delta)
     {
@@ -37,14 +37,21 @@ public partial class Player : Node2D
         character.MoveAndCollide(character.Velocity * (float)delta);
     }
 
-    public double GetHealth()
-    {
-        return health;
-    }
+	public double GetHealth()
+	{
+		return health;
+	}
 
-    public double TakeDamage(double damage)
-    {
-        health -= damage;
-        return health;
-    }
+	public double TakeDamage(double damage)
+	{
+		health -= damage;
+		UpdateHealthText();
+		return health;
+	}
+
+
+	private void UpdateHealthText()
+	{
+		// healthText.Text = "Health: " + GetHealth();
+	}
 }
