@@ -24,10 +24,12 @@ public partial class Player : CharacterBody2D
         Velocity = direction * _speed;
     }
 
+    
+
     public override void _PhysicsProcess(double delta)
     {
         GetInput();
-        MoveAndCollide(Velocity * (float)delta);
+        // MoveAndCollide(Velocity * (float)delta);
     }
 
     public double GetHealth()
