@@ -18,6 +18,10 @@ public partial class Player : CharacterBody2D
         return Dead; 
     }
 
+    public void makeAlive(){
+        Dead=false;
+    }
+
     public void Kill(){
         Dead=true;
     }
