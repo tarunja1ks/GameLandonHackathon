@@ -7,8 +7,8 @@ public partial class GameManager : Node2D
 
 	private PlayAgain playAgain;
 	private RichTextLabel milesText;
-
-	private RichTextLabel maxMilesTest;
+    private Timer scoreTimer;
+    private RichTextLabel maxMilesTest;
 	private static System.Timers.Timer aTimer;
 
 	[Export]
@@ -22,11 +22,12 @@ public partial class GameManager : Node2D
 	{
 		player = GetNodeOrNull<Player>("Player");
 		milesText = GetNodeOrNull<RichTextLabel>("ScoreText");
+		scoreTimer = milesText.GetNodeOrNull<Timer>("Timer");
 		maxMilesTest = GetNodeOrNull<RichTextLabel>("HighScore");
 		Console.WriteLine(player);
 		Console.WriteLine(milesText);
 
-		UpdateMilesText();
+		scoreTimer.WaitTime = 1;
 
 		int interval = (int)(5000 - gameSpeed);
 
@@ -34,6 +35,12 @@ public partial class GameManager : Node2D
 		aTimer.Elapsed += OnTimedEvent;
 		aTimer.AutoReset = true;
 		aTimer.Enabled = true;
+	}
+
+	public void OnScoreTimeout()
+	{
+		player.AddMiles(1);
+		UpdateMilesText();
 	}
 
 	public void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)

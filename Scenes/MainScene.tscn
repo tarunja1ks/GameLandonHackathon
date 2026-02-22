@@ -27,6 +27,9 @@ offset_bottom = -240.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Miles:"
 
+[node name="Timer" type="Timer" parent="ScoreText" unique_id=53088463]
+autostart = true
+
 [node name="Player" parent="." unique_id=1475355222 instance=ExtResource("1_nhkr4")]
 z_index = 1
 position = Vector2(107.335, 219.825)
@@ -61,4 +64,5 @@ autostart = true
 script = ExtResource("4_7rqgy")
 BeerScene = ExtResource("5_qxria")
 
+[connection signal="timeout" from="ScoreText/Timer" to="." method="OnScoreTimeout"]
 [connection signal="timeout" from="BeerSpawner" to="BeerSpawner" method="_on_timeout"]
