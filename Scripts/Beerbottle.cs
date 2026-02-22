@@ -18,11 +18,11 @@ public partial class Beerbottle : Area2D
 	}
 
 
-	public override void _on_body_entered(Node2D body){
+	public override void _on_body_entered(Player body){
 		if(body is player){
-			GD.print("collision");
-			player.TakeDamage(10);
-			if(player.)
+			GD.print("collision")
+			.TakeDamage(10);
+			if(.)
 		}
 	}	
 }
