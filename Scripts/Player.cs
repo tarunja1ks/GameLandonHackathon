@@ -9,6 +9,8 @@ public partial class Player : CharacterBody2D
 
     private double maxmiles=0;
 
+    private double angleDiff = 0;
+
     private bool Dead=false;
 
     public override void _Ready()
@@ -32,15 +34,36 @@ public partial class Player : CharacterBody2D
     public void GetInput()
     {
         Vector2 steering = Vector2.Zero;
+        // GD.Print(angleDiff);
         if(Input.IsActionPressed("MoveLeft",false))
         {
+            angleDiff -= 0.04;
+            if(angleDiff < -0.5)
+            {
+                angleDiff = -0.5;
+            
+            }
             steering = Vector2.Left;
         }
         if(Input.IsActionPressed("MoveRight",false))
         {
+            angleDiff += 0.04;
+            if(angleDiff > 0.5)
+            {
+                angleDiff = 0.5;
+            }
             steering = Vector2.Right;
         }
         
+        if(angleDiff < 0)
+        {
+            angleDiff += 0.01;
+        }
+        if(angleDiff > 0)
+        {
+            angleDiff -= 0.01;
+        }
+        this.Rotation = (float)angleDiff;
         Velocity = steering * _speed;
     }
 
@@ -50,6 +73,11 @@ public partial class Player : CharacterBody2D
     {
         GetInput();
         MoveAndCollide(Velocity * (float)delta);
+        GD.Print(Position);
+        if(Position.X > 557 || Position.X < -507)
+        {
+            Kill();
+        }
     }
 
 	public double GetHealth()
