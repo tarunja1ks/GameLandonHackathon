@@ -71,6 +71,11 @@ public partial class Player : CharacterBody2D
     {
         GetInput();
         MoveAndCollide(Velocity * (float)delta);
+        GD.Print(Position);
+        if(Position.X > 557 || Position.X < -507)
+        {
+            Kill();
+        }
     }
 
 	public double GetHealth()
