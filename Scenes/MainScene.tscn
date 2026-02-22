@@ -56,4 +56,4 @@ script = ExtResource("4_7rqgy")
 BeerScene = ExtResource("5_qxria")
 
 [connection signal="timeout" from="ScoreText/Timer" to="." method="OnScoreTimeout"]
-[connection signal="timeout" from="BeerSpawner" to="BeerSpawner" method="_on_timeout"]
+[connection signal="timeout" from="BeerSpawner" to="BeerSpawner" method="OnTimeout"]
