@@ -7,9 +7,9 @@
 size = Vector2(97, 94)
 
 [node name="Player" type="Node2D" unique_id=946290162]
+script = ExtResource("1_kyqiw")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1475355222]
-script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1931862533]
 scale = Vector2(1.19, 2.575)
