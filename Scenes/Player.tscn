@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d24x06yqkxdnj"]
+
+[ext_resource type="Script" uid="uid://ctagc3hvkeeje" path="res://Scripts/CharacterBody2d.cs" id="1_rpqav"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_augei"]
+size = Vector2(97, 94)
+
+[node name="Player" type="Node2D" unique_id=946290162]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1475355222]
+script = ExtResource("1_rpqav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1931862533]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_augei")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1329931320]
