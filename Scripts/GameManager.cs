@@ -4,6 +4,8 @@ using System;
 public partial class GameManager : Node2D
 {
 	private Player player;
+
+	private PlayAgain playAgain;
 	private RichTextLabel milesText;
 	private static System.Timers.Timer aTimer;
 
@@ -33,10 +35,17 @@ public partial class GameManager : Node2D
 	public override void _Process(double delta)
 	{
 		if(player.isDead()){
-			 GetTree().ChangeSceneToFile("res://Scenes/DeathScene.tscn");
+			GetTree().ChangeSceneToFile("res://Scenes/DeathScene.tscn");
 		}
 		else{
 			UpdateMilesText();
+		}
+
+		if(player.isDead() && playAgain.getPlayAgain()){
+			player.AddMiles(-player.GetMiles());
+			player.makeAlive();
+			GetTree().ChangeSceneToFile("res://Scenes/MainScene.tscn");
+
 		}
 	}
 

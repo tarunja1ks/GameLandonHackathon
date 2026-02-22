@@ -38,3 +38,5 @@ scale = Vector2(0.93, 1.0124999)
 
 [node name="Beer" parent="." unique_id=1685941350 instance=ExtResource("4_qxria")]
 position = Vector2(-345, -281)
+
+[connection signal="input_event" from="Beer" to="Beer" method="_on_input_event"]
