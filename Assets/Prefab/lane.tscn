@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://de0j00gmyubdi"]
+
+[ext_resource type="Texture2D" uid="uid://cmwix15sxt38v" path="res://Assets/Sprites/road.jpg" id="1_v3ubq"]
+[ext_resource type="Script" uid="uid://qkhwtyf7vnjm" path="res://LaneGen.cs" id="2_lhna1"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=181150954]
+position = Vector2(188, 333)
+scale = Vector2(0.93, 0.93)
+texture = ExtResource("1_v3ubq")
+script = ExtResource("2_lhna1")
