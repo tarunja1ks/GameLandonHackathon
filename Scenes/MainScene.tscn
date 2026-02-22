@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dl3i1q1ghjy13"]
 
+[ext_resource type="Script" uid="uid://xpwq3t2k13bo" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://d24x06yqkxdnj" path="res://Scenes/Player.tscn" id="1_nhkr4"]
 [ext_resource type="Texture2D" uid="uid://dtipry2lxqn7i" path="res://Assets/Sprites/beer Background Removed.png" id="2_7rqgy"]
 [ext_resource type="Script" uid="uid://b2cgv43b08vtr" path="res://Scenes/UpdateHealthText.cs" id="3_qxria"]
@@ -9,6 +10,7 @@
 size = Vector2(51, 198)
 
 [node name="MainScene" type="Node2D" unique_id=76152018]
+script = ExtResource("1_7rqgy")
 
 [node name="Player" parent="." unique_id=946290162 instance=ExtResource("1_nhkr4")]
 z_index = 1
@@ -24,20 +26,19 @@ position = Vector2(-2.5, 2)
 shape = SubResource("RectangleShape2D_y4jh7")
 
 [node name="HealthText" type="RichTextLabel" parent="." unique_id=46061418]
-offset_left = -223.0
-offset_top = -139.0
-offset_right = -133.0
-offset_bottom = -112.0
-theme_override_font_sizes/normal_font_size = 14
+offset_left = 272.0
+offset_top = -317.0
+offset_right = 569.0
+offset_bottom = -242.0
+theme_override_font_sizes/normal_font_size = 50
 text = "Health: 100"
-script = ExtResource("3_qxria")
 
 [node name="ScoreText" type="RichTextLabel" parent="." unique_id=1359775849]
-offset_left = -224.0
-offset_top = -111.0
-offset_right = -27.0
-offset_bottom = -87.0
-theme_override_font_sizes/normal_font_size = 14
+offset_left = -558.0
+offset_top = -316.0
+offset_right = 21.0
+offset_bottom = -226.0
+theme_override_font_sizes/normal_font_size = 50
 text = "Miles:"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1480103941]
