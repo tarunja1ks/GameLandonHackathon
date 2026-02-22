@@ -22,6 +22,15 @@ public partial class Player : CharacterBody2D
     private int _speed = 300;
     private double health = 100;
 
+
+    private RichTextLabel healthText;
+
+    public override void _Ready()
+	{
+        healthText = GetNode<RichTextLabel>("HealthText");
+        UpdateHealthText();
+	}
+
     public void GetInput()
     {
         // Vector2 inputDir = Input.GetVector("MoveLeft", "MoveRight", "null", "null");
@@ -56,7 +65,17 @@ public partial class Player : CharacterBody2D
     public double TakeDamage(double damage)
     {
         health -= damage;
+        UpdateHealthText();
         return health;
+    }
+<<<<<<< HEAD
+}
+>>>>>>> refs/remotes/origin/main
+=======
+
+    private void UpdateHealthText()
+    {
+        healthText.Text = "Health: " + GetHealth();
     }
 }
 >>>>>>> refs/remotes/origin/main
