@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://dl3i1q1ghjy13"]
+[gd_scene format=3 uid="uid://ck8ewxbgvkhh4"]
 
 [ext_resource type="Script" uid="uid://xpwq3t2k13bo" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://d24x06yqkxdnj" path="res://Scenes/Player.tscn" id="1_nhkr4"]
 [ext_resource type="PackedScene" uid="uid://de0j00gmyubdi" path="res://Assets/Prefab/lane.tscn" id="3_7rqgy"]
-[ext_resource type="PackedScene" path="res://Scenes/Beer.tscn" id="4_qxria"]
+[ext_resource type="PackedScene" uid="uid://b8t8huijge2b5" path="res://Scenes/Beer.tscn" id="4_qxria"]
 
 [node name="MainScene" type="Node2D" unique_id=76152018]
 script = ExtResource("1_7rqgy")
@@ -37,6 +37,6 @@ position = Vector2(20.000002, -2.6250105)
 scale = Vector2(0.93, 1.0124999)
 
 [node name="Beer" parent="." unique_id=1685941350 instance=ExtResource("4_qxria")]
-position = Vector2(-345, -281)
+position = Vector2(-249, 221)
 
 [connection signal="input_event" from="Beer" to="Beer" method="_on_input_event"]

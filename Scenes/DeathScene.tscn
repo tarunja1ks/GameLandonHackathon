@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dd3ritv7q1uhi"]
+[gd_scene format=3 uid="uid://xdckipka8w51"]
 
-[ext_resource type="Script" path="res://Scenes/PlayAgain.cs" id="1_1wlwy"]
+[ext_resource type="Script" uid="uid://cljoywyppg2nm" path="res://Scripts/PlayAgain.cs" id="1_1wlwy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_snitc"]
 

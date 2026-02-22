@@ -41,12 +41,11 @@ public partial class GameManager : Node2D
 			UpdateMilesText();
 		}
 
-		if(player.isDead() && playAgain.getPlayAgain()){
-			player.AddMiles(-player.GetMiles());
-			player.makeAlive();
-			GetTree().ChangeSceneToFile("res://Scenes/MainScene.tscn");
-
-		}
+		// if(player.isDead() && playAgain.getPlayAgain()){
+		// 	player.AddMiles(-player.GetMiles());
+		// 	player.makeAlive();
+		// 	GetTree().ChangeSceneToFile("res://Scenes/MainScene.tscn");
+		// }
 	}
 
 	private void UpdateMilesText()
