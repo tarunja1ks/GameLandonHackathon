@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cwqut4n7tsfsu"]
+
+[ext_resource type="PackedScene" uid="uid://d24x06yqkxdnj" path="res://Scenes/Player.tscn" id="1_r150o"]
+[ext_resource type="Texture2D" uid="uid://cmwix15sxt38v" path="res://Assets/Sprites/road.jpg" id="2_idj7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r150o"]
+
+[node name="Main" type="Node2D" unique_id=1016722186]
+
+[node name="Player" parent="." unique_id=946290162 instance=ExtResource("1_r150o")]
+z_index = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1616875897]
+position = Vector2(-500, 0)
+scale = Vector2(2.77, 36.115)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=553521921]
+shape = SubResource("RectangleShape2D_r150o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=83067639]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1823813588]
+scale = Vector2(0.93, 0.93)
+texture = ExtResource("2_idj7w")

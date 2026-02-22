@@ -1,3 +1,35 @@
 [gd_scene format=3 uid="uid://xdckipka8w51"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_snitc"]
+
 [node name="DeathScene" type="Node2D" unique_id=773096082]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1025775706]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D" unique_id=48664523]
+offset_left = -403.0
+offset_top = -263.0
+offset_right = 463.0
+offset_bottom = -26.0
+theme_override_font_sizes/normal_font_size = 90
+text = "YOU DIED YOU FOOL!!!"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Camera2D" unique_id=1199143598]
+offset_left = -496.0
+offset_top = -15.0
+offset_right = 504.0
+offset_bottom = 112.0
+theme_override_font_sizes/normal_font_size = 40
+text = "No health bar in real life little bro,
+you're just cooked."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Camera2D" unique_id=457360566]
+offset_left = -264.0
+offset_top = 141.0
+offset_right = 267.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_snitc")
+text = "Play Again (make better choices)"

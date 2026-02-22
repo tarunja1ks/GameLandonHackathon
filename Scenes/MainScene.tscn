@@ -1,8 +1,10 @@
-[gd_scene format=3 uid="uid://ck8ewxbgvkhh4"]
+[gd_scene format=3 uid="uid://dl3i1q1ghjy13"]
 
 [ext_resource type="Script" uid="uid://xpwq3t2k13bo" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://d24x06yqkxdnj" path="res://Scenes/Player.tscn" id="1_nhkr4"]
 [ext_resource type="Texture2D" uid="uid://dtipry2lxqn7i" path="res://Assets/Sprites/beer Background Removed.png" id="2_7rqgy"]
+[ext_resource type="Script" uid="uid://b2cgv43b08vtr" path="res://Scenes/UpdateHealthText.cs" id="3_qxria"]
+[ext_resource type="Texture2D" uid="uid://cmwix15sxt38v" path="res://Assets/Sprites/road.jpg" id="4_7rqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4jh7"]
 size = Vector2(51, 198)
@@ -11,6 +13,7 @@ size = Vector2(51, 198)
 script = ExtResource("1_7rqgy")
 
 [node name="Player" parent="." unique_id=946290162 instance=ExtResource("1_nhkr4")]
+z_index = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1928731119]
 position = Vector2(542, 287)
@@ -37,5 +40,9 @@ offset_right = 21.0
 offset_bottom = -226.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Miles:"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1480103941]
+scale = Vector2(0.93, 0.93)
+texture = ExtResource("4_7rqgy")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
