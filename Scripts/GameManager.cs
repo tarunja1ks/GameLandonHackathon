@@ -9,6 +9,9 @@ public partial class GameManager : Node2D
 	private RichTextLabel milesText;
 	private static System.Timers.Timer aTimer;
 
+    [Export]
+	private float gameSpeed = 300f;
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -53,4 +56,8 @@ public partial class GameManager : Node2D
         milesText.Text = "Miles: " + player.GetMiles();
     }
 
+	public float GetGameSpeed()
+	{
+		return gameSpeed;
+	}
 }
