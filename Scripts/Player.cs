@@ -1,59 +1,41 @@
 using Godot;
 using System;
 
-public partial class Player : CharacterBody2D
+public partial class Player : Node2D
 {
-	private int _speed = 300;
+    private int _speed = 300;
+    private double health = 100;
 
-	public void GetInput()
-	{
-		Vector2 inputDir = Input.GetVector("MoveLeft", "MoveRight", "null", "null");
-		Velocity = inputDir * _speed;
-	}
+    CharacterBody2D character;
 
-	public override void _PhysicsProcess(double delta)
-	{
-		GetInput();
-		MoveAndCollide(Velocity * (float)delta);
-	}
-
-	private int _speed = 300;
-	private double health = 100;
+    public override void _Ready()
+    {
+       this.character = GetNode<CharacterBody2D>("CharacterBody2D");
+    }
 
 
-	private RichTextLabel healthText;
-
-	public override void _Ready()
-	{
-		healthText = GetNode<RichTextLabel>("HealthText");
-		UpdateHealthText();
-	}
-
-	public void GetInput()
-	{
-		// Vector2 inputDir = Input.GetVector("MoveLeft", "MoveRight", "null", "null");
-		// Input.ge
-		Vector2 direction = Vector2.Zero;
-		if(Input.IsActionJustPressed("MoveLeft"))
-		{
-			direction = Vector2.Left;
-		}
-
-		if(Input.IsActionJustPressed("MoveRight"))
-		{
-			direction = Vector2.Right;
-		}
-		
-		Velocity = direction * _speed;
-	}
+    public void GetInput()
+    {
+        Vector2 steering = Vector2.Zero;
+        if(Input.IsActionPressed("MoveLeft",false))
+        {
+            steering = Vector2.Left;
+        }
+        if(Input.IsActionPressed("MoveRight",false))
+        {
+            steering = Vector2.Right;
+        }
+        
+        character.Velocity = steering * _speed;
+    }
 
 	
 
-	public override void _PhysicsProcess(double delta)
-	{
-		GetInput();
-		// MoveAndCollide(Velocity * (float)delta);
-	}
+    public override void _PhysicsProcess(double delta)
+    {
+        GetInput();
+        character.MoveAndCollide(character.Velocity * (float)delta);
+    }
 
 	public double GetHealth()
 	{
@@ -70,6 +52,6 @@ public partial class Player : CharacterBody2D
 
 	private void UpdateHealthText()
 	{
-		healthText.Text = "Health: " + GetHealth();
+		// healthText.Text = "Health: " + GetHealth();
 	}
 }

@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://cu7kjfaml0i1s"]
+[gd_scene format=3 uid="uid://d24x06yqkxdnj"]
 
 [ext_resource type="Script" uid="uid://cs26k66d7xd0a" path="res://Scripts/Player.cs" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://bbnyfufpys5nh" path="res://icon.svg" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://bpl0o4i427y4y" path="res://Assets/Sprites/car.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_augei"]
 size = Vector2(97, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 
 [node name="Player" type="Node2D" unique_id=946290162]
 
@@ -12,10 +14,18 @@ size = Vector2(97, 94)
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1931862533]
-position = Vector2(1, -1)
+scale = Vector2(1.19, 2.575)
 shape = SubResource("RectangleShape2D_augei")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=283035797]
+rotation = -1.5707964
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_kyqiw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1329931320]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1336242649]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1281872819]
+scale = Vector2(1.925, 14.395)
+shape = SubResource("RectangleShape2D_kyqiw")

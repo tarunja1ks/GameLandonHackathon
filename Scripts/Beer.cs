@@ -13,7 +13,7 @@ public partial class Beer : Area2D
 	{
 	}
 	
-	public void _on_body_entered(Node2d body){
+	public void _on_body_entered(Node2D body){
 		if(body is Player){
 			body.TakeDamage(10);
 		}
