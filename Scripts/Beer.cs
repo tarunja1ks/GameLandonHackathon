@@ -33,11 +33,11 @@ public partial class Beer : Area2D
 
 	private void SwipeAway()
 	{
-		var tween = CreateTween();
-		tween.TweenProperty(this, "position", Position + new Vector2(1000, 0), 0.5f)
-			 .SetEase(Tween.EaseType.Out)
-			 .SetTrans(Tween.TransitionType.Cubic);
-		tween.Finished += () => QueueFree();
+	var tween = CreateTween();
+	tween.TweenProperty(this, "position", Position + new Vector2(0, -1000), 0.5f)
+		.SetEase(Tween.EaseType.Out)
+		.SetTrans(Tween.TransitionType.Cubic);
+	tween.Finished += () => QueueFree();
 	}
 
 	
