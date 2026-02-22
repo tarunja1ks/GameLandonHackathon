@@ -11,7 +11,7 @@ public partial class Beer : Area2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		
+		Translate(Vector2.Down);
 	}
 	
 	public void _on_body_entered(Node2D body){
