@@ -7,7 +7,7 @@ public partial class Player : Node2D
     private double health = 100;
     private double miles = 0;
 
-    private Boolean Dead=false;
+    private bool Dead=false;
 
     CharacterBody2D character;
 
@@ -17,7 +17,7 @@ public partial class Player : Node2D
        this.miles = 0;
     }
 
-    public void isDead(){
+    public bool isDead(){
         return Dead; 
     }
 

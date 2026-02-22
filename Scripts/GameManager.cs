@@ -26,14 +26,13 @@ public partial class GameManager : Node2D
 
 	public void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
     {
-        player.AddMiles(5);
+        player.AddMiles(0.5);
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-
-		
+		GD.Print("in here");
 		if(player.isDead()){
 			 GetTree().ChangeSceneToFile("res://Scenes/DeathScene.tscn");
 		}

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ck8ewxbgvkhh4"]
 
-[ext_resource type="Script" uid="uid://xpwq3t2k13bo" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
+[ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://d24x06yqkxdnj" path="res://Scenes/Player.tscn" id="1_nhkr4"]
 [ext_resource type="Texture2D" uid="uid://dtipry2lxqn7i" path="res://Assets/Sprites/beer Background Removed.png" id="2_7rqgy"]
 [ext_resource type="Texture2D" uid="uid://cmwix15sxt38v" path="res://Assets/Sprites/road.jpg" id="4_7rqgy"]
