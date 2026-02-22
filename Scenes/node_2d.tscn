@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d24x06yqkxdnj"]
+[gd_scene format=3 uid="uid://b8t8huijge2b5"]
 
 [ext_resource type="Texture2D" uid="uid://dtipry2lxqn7i" path="res://Assets/Sprites/beer Background Removed.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://bicll0o5r34r7" path="res://Beerbottle.cs" id="1_v1qfn"]
