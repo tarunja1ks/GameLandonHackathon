@@ -7,11 +7,12 @@ public partial class GameManager : Node2D
 
 	private PlayAgain playAgain;
 	private RichTextLabel milesText;
+	
 
 	private RichTextLabel maxMilesTest;
 	private static System.Timers.Timer aTimer;
 
-    [Export]
+	[Export]
 	private float gameSpeed = 300f;
 
 
@@ -46,6 +47,7 @@ public partial class GameManager : Node2D
 		else{
 			UpdateMilesText();
 			UpdateMaxMilesText();
+			// player.UpdateHealthText();
 		}
 
 		// if(player.isDead() && playAgain.getPlayAgain()){

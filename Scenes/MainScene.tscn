@@ -7,15 +7,6 @@
 [node name="MainScene" type="Node2D" unique_id=76152018]
 script = ExtResource("1_7rqgy")
 
-[node name="HealthText" type="RichTextLabel" parent="." unique_id=46061418]
-z_index = 1
-offset_left = 267.0
-offset_top = -317.0
-offset_right = 564.0
-offset_bottom = -242.0
-theme_override_font_sizes/normal_font_size = 50
-text = "Health: 100"
-
 [node name="ScoreText" type="RichTextLabel" parent="." unique_id=1359775849]
 z_index = 2
 offset_left = -605.0

@@ -5,6 +5,8 @@ public partial class Player : CharacterBody2D
 {
     private int _speed = 300;
     private double health = 100;
+
+    private RichTextLabel healthText;
     private double miles = 0;
 
     private double maxmiles=0;
@@ -105,9 +107,12 @@ public partial class Player : CharacterBody2D
 	}
 
 
-	private void UpdateHealthText()
+	public void UpdateHealthText()
 	{
 		// healthText.Text = "Health: " + GetHealth();
+        GD.Print("thing");
+        healthText=GetNodeOrNull<RichTextLabel>("HealthText");
+        healthText.Text = "";
 	}
 
     public double GetMiles()
