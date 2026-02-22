@@ -26,7 +26,7 @@ public partial class GameManager : Node2D
 
 	public void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
     {
-        player.AddMiles(5);
+        // player.AddMiles(5);
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,7 +37,7 @@ public partial class GameManager : Node2D
 
 	private void UpdateMilesText()
     {
-        milesText.Text = "Miles: " + player.GetMiles();
+        // milesText.Text = "Miles: " + player.GetMiles();
     }
 
 }
