@@ -6,8 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_augei"]
 size = Vector2(97, 94)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
-
 [node name="Player" type="Node2D" unique_id=946290162]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1475355222]
@@ -23,9 +21,3 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_kyqiw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1329931320]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1336242649]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1281872819]
-scale = Vector2(1.925, 14.395)
-shape = SubResource("RectangleShape2D_kyqiw")
