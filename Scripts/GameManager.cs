@@ -32,7 +32,14 @@ public partial class GameManager : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		UpdateMilesText();
+
+		
+		if(player.isDead()){
+			 GetTree().ChangeSceneToFile("res://Scenes/DeathScene.tscn");
+		}
+		else{
+			UpdateMilesText();
+		}
 	}
 
 	private void UpdateMilesText()

@@ -16,8 +16,9 @@ public partial class Beer : Area2D
 	public void _on_body_entered(Node2D body){
 		if(body is Player){
 			Player playerBody = (Player)body;
-			playerBody.AddMiles(-100);
+			playerBody.Kill();
 		}
+
 	}
 
 	public void _on_input_event(Node viewport, InputEvent @event, int shapeIdx){

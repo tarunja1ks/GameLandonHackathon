@@ -7,12 +7,22 @@ public partial class Player : Node2D
     private double health = 100;
     private double miles = 0;
 
+    private Boolean Dead=false;
+
     CharacterBody2D character;
 
     public override void _Ready()
     {
        this.character = GetNode<CharacterBody2D>("CharacterBody2D");
        this.miles = 0;
+    }
+
+    public void isDead(){
+        return Dead; 
+    }
+
+    public void Kill(){
+        Dead=true;
     }
 
 
