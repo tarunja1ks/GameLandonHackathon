@@ -18,18 +18,10 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Health: 100"
 
 [node name="ScoreText" type="RichTextLabel" parent="." unique_id=1359775849]
-<<<<<<< HEAD
 offset_left = -605.0
 offset_top = -330.0
 offset_right = -26.0
 offset_bottom = -240.0
-=======
-z_index = 1
-offset_left = -558.0
-offset_top = -316.0
-offset_right = 21.0
-offset_bottom = -226.0
->>>>>>> refs/remotes/origin/main
 theme_override_font_sizes/normal_font_size = 50
 text = "Miles:"
 
@@ -49,7 +41,6 @@ scale = Vector2(0.93, 1.0124999)
 position = Vector2(-336, -3)
 scale = Vector2(0.93, 1.0124999)
 
-<<<<<<< HEAD
 [node name="HighScore" type="RichTextLabel" parent="." unique_id=1026507599]
 offset_left = -605.0
 offset_top = -269.0
@@ -59,11 +50,9 @@ theme_override_font_sizes/normal_font_size = 50
 text = "High Score: "
 
 [connection signal="input_event" from="Beer" to="Beer" method="_on_input_event"]
-=======
 [node name="Sprite2D3" parent="." unique_id=1219108759 instance=ExtResource("3_7rqgy")]
 position = Vector2(376, -6)
 scale = Vector2(0.93, 1.0124999)
 
 [node name="Beer" parent="." unique_id=1685941350]
 position = Vector2(-249, 221)
->>>>>>> refs/remotes/origin/main
