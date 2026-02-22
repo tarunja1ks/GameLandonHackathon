@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://xpwq3t2k13bo" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://d24x06yqkxdnj" path="res://Scenes/Player.tscn" id="1_nhkr4"]
 [ext_resource type="PackedScene" uid="uid://de0j00gmyubdi" path="res://Assets/Prefab/lane.tscn" id="3_7rqgy"]
+[ext_resource type="Script" uid="uid://b1u6121ommbv3" path="res://Scripts/BeerSpawner.cs" id="4_7rqgy"]
+[ext_resource type="PackedScene" uid="uid://b8t8huijge2b5" path="res://Scenes/beer.tscn" id="5_qxria"]
 
 [node name="MainScene" type="Node2D" unique_id=76152018]
 script = ExtResource("1_7rqgy")
@@ -53,3 +55,10 @@ text = "High Score: "
 [node name="Sprite2D3" parent="." unique_id=1219108759 instance=ExtResource("3_7rqgy")]
 position = Vector2(376, -6)
 scale = Vector2(0.93, 1.0124999)
+
+[node name="BeerSpawner" type="Timer" parent="." unique_id=1435100241]
+autostart = true
+script = ExtResource("4_7rqgy")
+BeerScene = ExtResource("5_qxria")
+
+[connection signal="timeout" from="BeerSpawner" to="BeerSpawner" method="_on_timeout"]
