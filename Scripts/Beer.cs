@@ -13,13 +13,29 @@ public partial class Beer : Area2D
 	{
 	}
 	
-	public override void _on_body_entered(Node2d body){
+	public void _on_body_entered(Node2d body){
 		if(body is Player){
 			body.TakeDamage(10);
 		}
 	}
-	public override void _on_mouse_entered(){
-		// make the beer bottle cancel
+
+	public void _on_input_event(Node viewport, InputEvent @event, int shapeIdx){
+		if (@event is InputEventMouseButton mouseButton && mouseButton.ButtonIndex == MouseButton.Left && mouseButton.Pressed && _isHovered)
+		{
+			SwipeAway();
+		}
 	}
+
+	private void SwipeAway()
+	{
+		GD.Print("Swiping away: " + Name);
+		// You can use a Tween for a smooth animation
+		var tween = CreateTween();
+		tween.TweenProperty(this, "position", Position + new Vector2(1000, 0), 0.5f)
+			 .SetEase(Tween.EaseType.Out)
+			 .SetTrans(Tween.TransitionType.Cubic);
+		tween.Finished += () => QueueFree();
+	}
+
 	
 }
