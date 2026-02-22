@@ -23,9 +23,10 @@ public partial class Beer : Area2D
 
 	}
 
-	public void _on_input_event(Node viewport, InputEvent @event, int shapeIdx){
+	public void _input_event(Viewport viewport, InputEvent @event, int shapeIdx){
 		if (@event is InputEventMouseButton mouseButton && mouseButton.ButtonIndex == MouseButton.Left && mouseButton.Pressed)
 		{
+			GD.Print("Beer was clicked!!!");
 			SwipeAway();
 		}
 	}

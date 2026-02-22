@@ -35,3 +35,5 @@ texture = ExtResource("4_7rqgy")
 [node name="Player" parent="." unique_id=1475355222 instance=ExtResource("1_nhkr4")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1773343948]
+
+[connection signal="input_event" from="Beer" to="Beer" method="_on_input_event"]
