@@ -5,12 +5,14 @@ public partial class Player : Node2D
 {
     private int _speed = 300;
     private double health = 100;
+    private double miles = 0;
 
     CharacterBody2D character;
 
     public override void _Ready()
     {
        this.character = GetNode<CharacterBody2D>("CharacterBody2D");
+       this.miles = 0;
     }
 
 
@@ -54,4 +56,14 @@ public partial class Player : Node2D
 	{
 		// healthText.Text = "Health: " + GetHealth();
 	}
+
+    public double GetMiles()
+    {
+        return miles;
+    }
+
+    public void AddMiles(double miles)
+    {
+        this.miles += miles;
+    }
 }
