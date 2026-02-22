@@ -3,15 +3,19 @@ using System;
 
 public partial class Beer : Area2D
 {
+	private GameManager gameManager;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		this.gameManager = (GameManager)GetParent();
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		Translate(Vector2.Down);
+		this.Translate(Vector2.Down * gameManager.GetGameSpeed() * (float)delta);
 	}
 	
 	public void _on_body_entered(Node2D body){

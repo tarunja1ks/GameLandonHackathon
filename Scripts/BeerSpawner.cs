@@ -16,17 +16,13 @@ public partial class BeerSpawner : Timer
 	public override void _Ready()
 	{
 		this.gameManager = (GameManager)GetParent();
-		this.WaitTime = 1.5f;
+		this.WaitTime = 0.67f;
 		this.Start();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		Beer beer = (Beer)BeerScene.Instantiate<Node2D>();
-		beer.Position = new Vector2(0, 0);
-		beer.ZIndex = 5;
-		this.gameManager.AddChild(beer);
 	}
 
 	public void OnTimeout()

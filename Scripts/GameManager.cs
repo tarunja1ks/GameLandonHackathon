@@ -7,8 +7,8 @@ public partial class GameManager : Node2D
 
 	private PlayAgain playAgain;
 	private RichTextLabel milesText;
-    private Timer scoreTimer;
-    private RichTextLabel maxMilesTest;
+	private Timer scoreTimer;
+	private RichTextLabel maxMilesTest;
 	private static System.Timers.Timer aTimer;
 
 	[Export]
