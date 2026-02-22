@@ -15,8 +15,9 @@ public partial class PlayAgain : Button
 	{
 	}
 
-	public void _on_pressed(){
+	public  void _on_pressed(){
 		playingAgain=true;
+		GD.Print("here");
 	}
 	public void reset(){
 		playingAgain=false;

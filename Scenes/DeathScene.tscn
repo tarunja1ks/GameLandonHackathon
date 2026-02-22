@@ -34,6 +34,7 @@ offset_right = 267.0
 offset_bottom = 219.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_snitc")
+button_mask = 3
 text = "Play Again (make better choices)"
 script = ExtResource("1_1wlwy")
 
