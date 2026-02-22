@@ -62,7 +62,7 @@ public partial class Player : CharacterBody2D
             manager.SetGameSpeed(manager.GetGameSpeed()+15);
         }
 
-        if(Input.IsActionPressed("Deccelerate",false) && manager.GetGameSpeed() >= 30)
+        if(Input.IsActionPressed("Deccelerate",false) && manager.GetGameSpeed() >= 15+manager.minimumGameSpeed)
         {
             manager.SetGameSpeed(manager.GetGameSpeed()-15);
         }
