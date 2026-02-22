@@ -11,9 +11,12 @@ public partial class Player : CharacterBody2D
 
     private bool Dead=false;
 
+    GameManager manager;
+
     public override void _Ready()
     {
        this.miles = 0;
+       this.manager = GetParent<GameManager>();
     }
 
     public bool isDead(){
@@ -27,7 +30,6 @@ public partial class Player : CharacterBody2D
     public void Kill(){
         Dead=true;
     }
-
 
     public void GetInput()
     {
@@ -51,6 +53,16 @@ public partial class Player : CharacterBody2D
                 angleDiff = 0.5;
             }
             steering = Vector2.Right;
+        }
+
+        if(Input.IsActionPressed("Accelerate",false))
+        {
+            manager.SetGameSpeed(manager.GetGameSpeed()+15);
+        }
+
+        if(Input.IsActionPressed("Deccelerate",false) && manager.GetGameSpeed() >= 30)
+        {
+            manager.SetGameSpeed(manager.GetGameSpeed()-15);
         }
         
         if(angleDiff < 0)

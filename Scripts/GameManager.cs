@@ -60,4 +60,9 @@ public partial class GameManager : Node2D
 	{
 		return gameSpeed;
 	}
+
+	public void SetGameSpeed(float speed)
+	{
+		this.gameSpeed = speed;
+	}
 }
