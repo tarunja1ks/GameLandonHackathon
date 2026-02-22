@@ -15,7 +15,7 @@ public partial class Beer : Area2D
 	
 	public void _on_body_entered(Node2D body){
 		if(body is Player){
-			body.TakeDamage(10);
+			body.AddMiles(-100);
 		}
 	}
 
